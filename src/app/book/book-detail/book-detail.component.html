@@ -27,6 +27,11 @@
         <hr />
         <dt class="bold">Description</dt>
         <dd>{{ bookDetail.description }}</dd>
+        <hr />
+        <dt class="bold">Reviews</dt>
+        <dd class="caption" *ngFor="let r of bookDetail.reviews">
+          {{r.description}}
+        </dd>
       </dl>
     </div>
   </div>
