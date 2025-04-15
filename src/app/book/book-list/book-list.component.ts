@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Book } from '../book';
 import { BookService } from '../book.service';
+import { BookDetail } from '../book-detail';
 
 @Component({
   selector: 'app-book-list',
@@ -10,9 +11,9 @@ import { BookService } from '../book.service';
 })
 export class BookListComponent implements OnInit {
 
-  books: Array<Book> = [];
+  books: Array<BookDetail> = [];
 
-  selectedBook!: Book;
+  selectedBook!: BookDetail;
   selected: Boolean = false;
 
   constructor(private bookService: BookService) { }
@@ -23,7 +24,7 @@ export class BookListComponent implements OnInit {
     });
   }
 
-  onSelected(book:Book): void {
+  onSelected(book:BookDetail): void {
     this.selected = true;
     this.selectedBook = book;
   }
