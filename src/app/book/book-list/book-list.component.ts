@@ -12,12 +12,20 @@ export class BookListComponent implements OnInit {
 
   books: Array<Book> = [];
 
+  selectedBook!: Book;
+  selected: Boolean = false;
+
   constructor(private bookService: BookService) { }
 
   getBooks() {
     this.bookService.getBooks().subscribe(books => {
       this.books = books;
     });
+  }
+
+  onSelected(book:Book): void {
+    this.selected = true;
+    this.selectedBook = book;
   }
 
   ngOnInit() {
