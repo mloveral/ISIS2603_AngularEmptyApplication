@@ -9,7 +9,6 @@ import { BookModule } from './book/book.module';
   imports: [
     AppModule,
     ServerModule,
-    BookModule,
   ],
   bootstrap: [AppComponent],
 })
